@@ -1,10 +1,12 @@
 import Layout from "@/layout/main";
 import Link from "next/link";
 import MotionWrapper from "@/components/animation";
+import HeadMeta from "@/components/headermeta";
 
 export default function Home() {
   return (
     <Layout>
+      <HeadMeta pageTitle="Home" pageDescription="Welcome to VARIUS" pagePath="/" />
       <div className="p-2 flex flex-col items-center justify-center h-auto">
 
         <MotionWrapper s={0.5} style="h-150 w-full flex items-center justify-center">
