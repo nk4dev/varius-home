@@ -1,8 +1,6 @@
 {
   "name": "varius-home",
   "description": "Build a full-stack web application with Next.js.",
-  "license": "Apache-2.0",
-  "version": "0.1.0",
   "cloudflare": {
     "label": "Next.js Framework Starter",
     "products": [
