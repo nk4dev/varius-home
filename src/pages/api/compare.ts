@@ -10,6 +10,7 @@ async function fetchGitHubDiff(base: string, head: string) {
   const url = `https://api.github.com/repos/nk4dev/vx3/compare/${encodeURIComponent(base)}...${encodeURIComponent(head)}`;
   const response = await fetch(url, {
     headers: {
+      "User-Agent": "YourApp", // GitHub API requires a User-Agent header
       Authorization: `Bearer ${GITHUB_SECRET}`,
       Accept: 'application/vnd.github.v3.diff'
     }
