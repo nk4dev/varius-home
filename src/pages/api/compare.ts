@@ -1,5 +1,4 @@
 // Run on the Edge (Cloudflare/Open Next). The handler also supports Node-style Next API calls.
-export const runtime = 'edge';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
