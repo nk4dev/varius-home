@@ -16,5 +16,12 @@
   "observability": {
     "enabled": true
   },
-  "upload_source_maps": true
+  "upload_source_maps": true,
+  "env": {
+    "production": {
+      "bindings": {
+        "GITHUB_SECRET": { "secret_name": "GITHUB_SECRET" }
+      }
+    }
+  }
 }
