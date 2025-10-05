@@ -2,7 +2,12 @@
   "name": "varius-home",
   "main": ".open-next/worker.js",
   "compatibility_date": "2025-04-01",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "build": {
+    "command": "npm run build:cloudflare"
+  },
   "minify": true,
   "assets": {
     "directory": ".open-next/assets",
