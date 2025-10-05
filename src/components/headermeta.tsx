@@ -33,7 +33,7 @@ const HeadMeta: React.FC<MetaProps> = ({
         ? pageImg.replace(/.*\//, "").replace(/\.\w+$/, "")
         : "VARIUS";
     //const imgx = require("/images/favicon.ico");
-    const defaultPageImg = `https://ogp-img-gen.vercel.app/api/img-gen?text=${title}`;
+    const defaultPageImg = `https://ogp-img-gen.vercel.app/api/img-gen?text=${title}&host=varius.technology`;
     return (
         <Head>
             <title>{title}</title>

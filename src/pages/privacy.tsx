@@ -1,10 +1,12 @@
 import Layout from "@/layout/main";
+import HeadMeta from "@/components/headermeta";
 
 export default function Privacy() {
     const teamname = "VARIUS";
 
     return (
         <Layout>
+            <HeadMeta pageTitle="Privacy Policy" pageDescription="Privacy Policy of VARIUS" pagePath="/privacy" />
             <div className="p-10">
                 <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
                 <p>This is the privacy policy for {teamname}. We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner.</p>
