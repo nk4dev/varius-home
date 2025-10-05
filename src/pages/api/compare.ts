@@ -7,7 +7,7 @@ async function fetchGitHubDiff(base: string, head: string) {
   if (!GITHUB_SECRET) {
     throw new Error('GITHUB_SECRET not configured');
   }
-  const url = `https://api.github.com/repos/nk4dev/vx3/compare/${encodeURIComponent(base)}...${encodeURIComponent(head)}`;
+  const url = `https://api.github.com/repos/nk4dev/vx/compare/${encodeURIComponent(base)}...${encodeURIComponent(head)}`;
   const response = await fetch(url, {
     headers: {
       'User-Agent' : "varius-home", // GitHub API requires a User-Agent header
