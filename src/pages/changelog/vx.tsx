@@ -64,14 +64,14 @@ export default function VX({ version, github, github_dev, diffText, prevMaster, 
 export async function getServerSideProps({ }) {
     const version = await fetch("https://api.varius.technology/version").then(res => res.json());
     const headers = { Authorization: `Bearer ${process.env.GITHUB_SECRET}` };
-    const github = await fetch("https://api.github.com/repos/nk4dev/vx3/commits/master", { headers }).then(res => res.json()) as any;
+    const github = await fetch("https://api.github.com/repos/nk4dev/vx/commits/master", { headers }).then(res => res.json()) as any;
 
     const prevMaster = (github && github.parents && github.parents[0] && github.parents[0].sha) ? github.parents[0].sha : null;
 
     // fetch unified diff between prevMaster -> master if prevMaster exists
     let diffText = '';
     if (prevMaster) {
-        const compareUrl = `https://api.github.com/repos/nk4dev/vx3/compare/${encodeURIComponent(prevMaster)}...${encodeURIComponent(github.sha)}`;
+        const compareUrl = `https://api.github.com/repos/nk4dev/vx/compare/${encodeURIComponent(prevMaster)}...${encodeURIComponent(github.sha)}`;
         const diffRes = await fetch(compareUrl, { headers: { ...headers, Accept: 'application/vnd.github.v3.diff' } });
         diffText = await diffRes.text();
     }
