@@ -1,4 +1,43 @@
 @import "tailwindcss";
+@import "react-diff-view/style/index.css";
+
+/* Theme variables: light mode uses --bg / --text, dark mode inverts them via .dark */
+:root {
+  --bg: #ffffff; /* light background */
+  --text: #000000; /* light text */
+}
+
+.dark {
+  --bg: #000000; /* dark background */
+  --text: #ffffff; /* dark text */
+}
+
+.dark .diff {
+  background: #fff;
+  color: #000;
+}
+
+/* Panel and accent colors */
+:root {
+  --panel: #f3f4ff; /* light panel */
+  --accent: #7856ff;
+}
+
+.dark {
+  --panel: #141066; /* dark panel */
+  --accent: #9b85ff;
+}
+
+html, body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* helper classes for theme-aware utilities */
+.bg-theme { background-color: var(--bg); }
+.text-theme { color: var(--text); }
+.bg-panel { background-color: var(--panel); }
+.text-accent { color: var(--accent); }
 
 ::selection {
   background-color: #7856ff;

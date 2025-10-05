@@ -1,8 +1,7 @@
 {
   "name": "varius-home",
-  "description": "Build a full-stack web application with Next.js.",
   "cloudflare": {
-    "label": "Next.js Framework Starter",
+    "label": "varius homepage",
     "products": [
       "Workers"
     ],
@@ -18,6 +17,7 @@
     "next": "^15.5.4",
     "open-next": "^3.1.3",
     "react": "^19.1.1",
+    "react-diff-view": "^3.3.2",
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
@@ -37,7 +37,7 @@
     "build": "next build",
     "check": "opennextjs-cloudflare build && tsc && wrangler deploy --dry-run",
     "deploy": "opennextjs-cloudflare build && wrangler deploy",
-    "dev": "next dev",
+    "dev": "next dev --turbo --port 4545",
     "lint": "next lint",
     "preview": "opennextjs-cloudflare build && wrangler dev",
     "start": "next start",
