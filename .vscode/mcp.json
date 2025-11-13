@@ -1,0 +1,15 @@
+{
+  "servers": {
+    "next.js Docs": {
+      "type": "sse",
+      "url": "https://vercel.gitmcp.io/next.js"
+    },
+    "shadcn": {
+      "command": "npx",
+      "args": [
+        "shadcn@latest",
+        "mcp"
+      ]
+    }
+  }
+}

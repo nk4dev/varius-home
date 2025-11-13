@@ -1,8 +1,10 @@
 import type { AppProps } from "next/app";
+import { SessionProvider } from "next-auth/react";
+import { TRPCProvider } from "@/utils/trpc-provider";
 import "./globals.css";
 import { useEffect } from "react";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   // Initialize theme on client: localStorage -> prefers-color-scheme -> default light
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -22,5 +24,11 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, []);
 
-  return <Component {...pageProps} />
+  return (
+    <SessionProvider session={session}>
+      <TRPCProvider>
+        <Component {...pageProps} />
+      </TRPCProvider>
+    </SessionProvider>
+  );
 }

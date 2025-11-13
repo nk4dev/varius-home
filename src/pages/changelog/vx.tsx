@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import HeadMeta from "@/components/headermeta";
-import Link from "next/link";
 import Layout from "@/layout/main";
-import dynamic from 'next/dynamic';
 
-const DiffViewer = dynamic(() => import('@/components/diffViewer'), { ssr: false });
 
 export default function VX({ version }: { version: any }) {
     // state and helpers
