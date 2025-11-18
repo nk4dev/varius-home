@@ -1,5 +1,4 @@
 import type { AppProps } from "next/app";
-import { TRPCProvider } from "@/utils/trpc-provider";
 import "./globals.css";
 import { useEffect } from "react";
 
@@ -24,8 +23,6 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
   }, []);
 
   return (
-      <TRPCProvider>
-        <Component {...pageProps} />
-      </TRPCProvider>
+    <Component {...pageProps} />
   );
 }
