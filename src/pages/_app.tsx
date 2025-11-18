@@ -1,5 +1,4 @@
 import type { AppProps } from "next/app";
-import { SessionProvider } from "next-auth/react";
 import { TRPCProvider } from "@/utils/trpc-provider";
 import "./globals.css";
 import { useEffect } from "react";
@@ -25,10 +24,8 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
   }, []);
 
   return (
-    <SessionProvider session={session}>
       <TRPCProvider>
         <Component {...pageProps} />
       </TRPCProvider>
-    </SessionProvider>
   );
 }

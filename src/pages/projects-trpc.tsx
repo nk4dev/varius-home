@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import Layout from "@/layout/main";
 import HeadMeta from "@/components/headermeta";
@@ -20,7 +19,10 @@ interface Project {
 }
 
 export default function ProjectsPage() {
-  const { data: session, status } = useSession();
+  // NextAuth has been removed. Provide a temporary stub for session and status.
+  // If you have another auth solution, replace this with the appropriate hook and logic.
+  const session = { user: { email: "unknown" } } as any;
+  const status = "authenticated" as "authenticated" | "unauthenticated" | "loading";
   const router = useRouter();
   const [showNewProjectForm, setShowNewProjectForm] = useState(false);
   const [newProject, setNewProject] = useState({
@@ -120,13 +122,7 @@ export default function ProjectsPage() {
               <Plus className="h-4 w-4 mr-2" />
               新しいプロジェクト
             </Button>
-            <Button
-              variant="outline"
-              onClick={async () => {
-                await signOut({ redirect: false });
-                router.push("/login");
-              }}
-            >
+            <Button variant="outline" onClick={() => router.push("/login") }>
               ログアウト
             </Button>
           </div>

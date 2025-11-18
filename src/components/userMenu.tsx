@@ -1,9 +1,6 @@
 "use client";
 
-import { signOut } from "next-auth/react";
-import Image from "next/image";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 interface UserMenuProps {
   className?: string;
@@ -34,15 +31,6 @@ export function UserMenu({ className = "" }: UserMenuProps) {
               ダッシュボード
             </button>
           </Link>
-
-          <button
-            onClick={async () => {
-              await signOut({ redirect: true, callbackUrl: "/" });
-            }}
-            className="w-full text-left px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm text-red-600 dark:text-red-400 font-medium"
-          >
-            ログアウト
-          </button>
         </div>
       )}
     </div>
