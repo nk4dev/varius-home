@@ -5,14 +5,11 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/themeToggle";
-import { UserMenu } from "@/components/userMenu";
 import {
     NavigationMenu,
-    NavigationMenuContent,
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
-    NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
 interface HeaderProps {
@@ -26,9 +23,7 @@ export default function Header({ linkList }: HeaderProps) {
 
     // デフォルトリンク
     const defaultLinks = [
-        { href: "/dashboard", label: "Dashboard" },
         { href: "/about", label: "About" },
-        { href: "/changelog/vx", label: "Changelog" }
     ];
 
     const links = linkList || defaultLinks;
@@ -102,7 +97,6 @@ export default function Header({ linkList }: HeaderProps) {
                     {/* 右側：テーマトグル + ユーザーメニュー + モバイルメニューボタン */}
                     <div className="flex items-center gap-4">
                         <ThemeToggle />
-                        <UserMenu />
 
                         {/* モバイルメニューボタン */}
                         <Button
